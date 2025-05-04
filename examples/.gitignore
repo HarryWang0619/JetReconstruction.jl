@@ -6,3 +6,4 @@
 profile/*
 # Playground for development scripts and notebooks
 playground/*
+examples/flavour-tagging/data/*

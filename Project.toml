@@ -1,7 +1,7 @@
 name = "JetReconstruction"
 uuid = "44e8cb2c-dfab-4825-9c70-d4808a591196"
 authors = ["Atell Krasnopolski <delta_atell@protonmail.com>", "Graeme A Stewart <graeme.andrew.stewart@cern.ch", "Philippe Gras <philippe.gras@cern.ch>"]
-version = "0.4.5"
+version = "0.4.9"
 
 [deps]
 Accessors = "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697"
@@ -14,9 +14,11 @@ LorentzVectorHEP = "f612022c-142a-473f-8cfd-a09cf3793c6c"
 LorentzVectors = "3f54b04b-17fc-5cd4-9758-90c048d965e3"
 MuladdMacro = "46d2c3a1-f734-5fdb-9937-b9b9aeba4221"
 StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+EDM4hep = "eb32b910-dde9-4347-8fce-cd6be3498f0c"
+ONNXRunTime = "e034b28e-924e-41b2-b98f-d2bbeb830c6a"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 
 [weakdeps]
-EDM4hep = "eb32b910-dde9-4347-8fce-cd6be3498f0c"
 Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
 
 [extensions]
@@ -37,6 +39,7 @@ LorentzVectorHEP = "0.1.6"
 LorentzVectors = "0.4.3"
 Makie = "0.20, 0.21, 0.22"
 MuladdMacro = "0.2.4"
+ONNXRunTime = "1.3.1"
 StructArrays = "0.6.18, 0.7"
 Test = "1.9"
 julia = "1.9"

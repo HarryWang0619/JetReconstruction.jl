@@ -18,6 +18,7 @@ module JetReconstruction
 using LorentzVectorHEP
 using MuladdMacro
 using StructArrays
+using EDM4hep
 
 # Import from LorentzVectorHEP methods for those 4-vector types
 pt2(p::LorentzVector) = LorentzVectorHEP.pt2(p)
@@ -49,7 +50,7 @@ export RecoStrategy, JetAlgorithm
 # ClusterSequence type
 include("ClusterSequence.jl")
 export ClusterSequence, inclusive_jets, exclusive_jets, n_exclusive_jets, constituents,
-       constituent_indexes, parent_jets
+        constituent_indexes, parent_jets
 
 ## N2Plain algorithm
 # Algorithmic part for simple sequential implementation
@@ -81,6 +82,14 @@ include("HepMC3.jl")
 # jet serialisation (saving to file)
 include("Serialize.jl")
 export savejets, loadjets!, loadjets
+
+# jet constituent utilities
+include("JetConstituentUtils.jl")
+export build_constituents, build_constituents_cluster, get_jet_constituents, get_constituents
+
+# jet flavour helper
+include("JetFlavourHelper.jl")
+export extract_features, setup_weaver, prepare_input_tensor, get_weights, get_weight
 
 # utility functions, useful for different primary scripts
 include("Utils.jl")

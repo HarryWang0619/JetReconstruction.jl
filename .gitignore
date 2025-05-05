@@ -37,3 +37,4 @@ benchmark/*
 /statprof/*
 /debug/*
 examples/flavour-tagging/data/events_080263084.root
+/examples/flavour-tagging/data/wc_pt_7classes_12_04_2023

@@ -1,5 +1,3 @@
-module ReconstructedParticle
-
 using JetReconstruction
 using LorentzVectorHEP
 using EDM4hep
@@ -455,5 +453,3 @@ function get(indices::StructVector{ObjectID}, particles::JetConstituents)
         return StructVector{EDM4hep.ReconstructedParticle}(similar.(fieldarrays(particles), 0))
     end
 end
-
-end # module

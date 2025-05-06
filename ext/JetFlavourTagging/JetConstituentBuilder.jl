@@ -1,3 +1,5 @@
+module JetConstituentBuilder
+
 using EDM4hep
 using StructArrays: StructVector
 
@@ -84,3 +86,5 @@ function get_constituents(csts::Vector{JetConstituents}, jets::Vector{Int})
     end
     return jcs
 end
+
+end # module JetConstituentBuilder

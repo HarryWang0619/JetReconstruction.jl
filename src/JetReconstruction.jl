@@ -18,7 +18,6 @@ module JetReconstruction
 using LorentzVectorHEP
 using MuladdMacro
 using StructArrays
-using EDM4hep
 
 # Import from LorentzVectorHEP methods for those 4-vector types
 pt2(p::LorentzVector) = LorentzVectorHEP.pt2(p)
@@ -83,14 +82,6 @@ include("HepMC3.jl")
 include("Serialize.jl")
 export savejets, loadjets!, loadjets
 
-## jet constituent builder (separated from utility functions)
-include("JetConstituentBuilder.jl")
-export build_constituents, build_constituents_cluster, get_jet_constituents, get_constituents
-
-# jet flavour helper (loads utility functions internally)
-include("JetFlavourHelper.jl")
-export extract_features, setup_weaver, prepare_input_tensor, get_weights, get_weight
-
 # utility functions, useful for different primary scripts
 include("Utils.jl")
 export read_final_state_particles, final_jets
@@ -99,6 +90,19 @@ export read_final_state_particles, final_jets
 function jetsplot() end
 function animatereco() end
 export jetsplot, animatereco
+
+# Jet flavour tagging as an extension
+function build_constituents() end
+function build_constituents_cluster() end
+function get_jet_constituents() end
+function get_constituents() end
+export build_constituents, build_constituents_cluster, get_jet_constituents, get_constituents
+function extract_features() end
+function setup_weaver() end
+function prepare_input_tensor() end
+function get_weights() end
+function get_weight() end
+export extract_features, setup_weaver, prepare_input_tensor, get_weights, get_weight
 
 # JSON results
 include("JSONresults.jl")

@@ -1,4 +1,4 @@
-# module JetFlavourHelper
+module JetFlavourHelper
 
 using JSON
 using ONNXRunTime
@@ -9,6 +9,7 @@ using StructArrays: StructVector
 using EDM4hep
 using LorentzVectorHEP
 
+# Utility functions for the jet features from EDM4hep
 include("JetConstituentUtils.jl")
 # include("ReconstructedParticle.jl")
 
@@ -475,4 +476,4 @@ function extract_features(jets::Vector{EEJet}, jcs::Vector{StructVector{EDM4hep.
     return features
 end
 
-# end # module
+end # module

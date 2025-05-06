@@ -4,8 +4,8 @@ using JSON
 using ONNXRunTime
 # using StaticArrays
 # using LinearAlgebra
-# using StructArrays: StructVector
-using JetReconstruction
+using StructArrays: StructVector
+## using JetReconstruction  # not needed when included in JetReconstruction module
 using EDM4hep
 using LorentzVectorHEP
 

@@ -83,11 +83,11 @@ include("HepMC3.jl")
 include("Serialize.jl")
 export savejets, loadjets!, loadjets
 
-# jet constituent utilities
-include("JetConstituentUtils.jl")
+## jet constituent builder (separated from utility functions)
+include("JetConstituentBuilder.jl")
 export build_constituents, build_constituents_cluster, get_jet_constituents, get_constituents
 
-# jet flavour helper
+# jet flavour helper (loads utility functions internally)
 include("JetFlavourHelper.jl")
 export extract_features, setup_weaver, prepare_input_tensor, get_weights, get_weight
 

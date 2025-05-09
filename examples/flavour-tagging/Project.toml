@@ -1,0 +1,12 @@
+[deps]
+ArgParse = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+EDM4hep = "eb32b910-dde9-4347-8fce-cd6be3498f0c"
+JetReconstruction = "44e8cb2c-dfab-4825-9c70-d4808a591196"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+ONNXRunTime = "e034b28e-924e-41b2-b98f-d2bbeb830c6a"
+UnROOT = "3cd96dde-e98d-4713-81e9-a4a1b0235ce9"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+
+[sources]
+JetReconstruction = {path = "../.."}

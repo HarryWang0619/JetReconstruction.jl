@@ -49,7 +49,7 @@ export RecoStrategy, JetAlgorithm
 # ClusterSequence type
 include("ClusterSequence.jl")
 export ClusterSequence, inclusive_jets, exclusive_jets, n_exclusive_jets, constituents,
-       constituent_indexes, parent_jets
+        constituent_indexes, parent_jets
 
 ## N2Plain algorithm
 # Algorithmic part for simple sequential implementation
@@ -90,6 +90,19 @@ export read_final_state_particles, final_jets
 function jetsplot() end
 function animatereco() end
 export jetsplot, animatereco
+
+# Jet flavour tagging as an extension
+function build_constituents() end
+function build_constituents_cluster() end
+function get_jet_constituents() end
+function get_constituents() end
+export build_constituents, build_constituents_cluster, get_jet_constituents, get_constituents
+function extract_features() end
+function setup_weaver() end
+function prepare_input_tensor() end
+function get_weights() end
+function get_weight() end
+export extract_features, setup_weaver, prepare_input_tensor, get_weights, get_weight
 
 # JSON results
 include("JSONresults.jl")

@@ -2,7 +2,6 @@
 using EDM4hep
 using EDM4hep.RootIO
 using JetReconstruction
-using StaticArrays
 using LorentzVectorHEP
 using JSON
 using ONNXRunTime

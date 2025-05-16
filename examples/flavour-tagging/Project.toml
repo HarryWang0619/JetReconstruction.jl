@@ -7,6 +7,7 @@ JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 ONNXRunTime = "e034b28e-924e-41b2-b98f-d2bbeb830c6a"
 UnROOT = "3cd96dde-e98d-4713-81e9-a4a1b0235ce9"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+LorentzVectorHEP = "f612022c-142a-473f-8cfd-a09cf3793c6c"
 
 [sources]
 JetReconstruction = {path = "../.."}

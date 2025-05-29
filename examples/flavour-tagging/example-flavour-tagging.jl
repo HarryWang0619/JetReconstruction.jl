@@ -6,7 +6,6 @@ using LorentzVectorHEP
 using JSON
 using ONNXRunTime
 using StructArrays
-using UnROOT
 
 """
 Main function to perform jet flavor tagging
@@ -44,21 +43,15 @@ function main()
     recps = RootIO.get(reader, evt, "ReconstructedParticles")
     tracks = RootIO.get(reader, evt, "EFlowTrack_1")
 
-    # Set the magnetic field strength (in Tesla)
-    bz = 2.0  # This should be obtained from your data if possible
-
-    # Get other needed collections for feature extraction
+    # Get needed collections for feature extraction
+    bz = RootIO.get(reader, evt, "magFieldBz", register = false)
     trackdata = RootIO.get(reader, evt, "EFlowTrack")
     trackerhits = RootIO.get(reader, evt, "TrackerHits")
     gammadata = RootIO.get(reader, evt, "EFlowPhoton")
     nhdata = RootIO.get(reader, evt, "EFlowNeutralHadron")
     calohits = RootIO.get(reader, evt, "CalorimeterHits")
     dNdx = RootIO.get(reader, evt, "EFlowTrack_2")
-
-    # Load track length information from the ROOT file
-    f = ROOTFile(edm4hep_path)
-    mytree = LazyTree(f, "events", ["EFlowTrack_L"])
-    track_L = collect(mytree[event_id].EFlowTrack_L)
+    track_L = RootIO.get(reader, evt, "EFlowTrack_L", register = false)
 
     println("Loaded $(length(recps)) reconstructed particles")
     println("Loaded $(length(tracks)) tracks")

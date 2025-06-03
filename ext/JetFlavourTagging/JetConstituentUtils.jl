@@ -346,7 +346,7 @@ function get_type(jcs::Vector{JetConstituents})
     for jet_constituents in jcs
         type_values = JetConstituentsData()
         for p in jet_constituents
-            push!(type_values, Float32(p.particleIDs))
+            push!(type_values, Float32(p.type))
         end
         push!(result, type_values)
     end
@@ -1399,7 +1399,7 @@ function get_isGamma(jcs::Vector{JetConstituents})
         is_gamma = JetConstituentsData()
         
         for p in jet_constituents
-            if p.particleIDs == 22  # PDG code for photon
+            if p.type == 22  # PDG code for photon
                 push!(is_gamma, 1.0f0)
             else
                 push!(is_gamma, 0.0f0)
@@ -1424,7 +1424,7 @@ function get_isNeutralHad(jcs::Vector{JetConstituents})
         is_neutral_had = JetConstituentsData()
         
         for p in jet_constituents
-            if p.particleIDs == 130  # PDG code for K_L^0 (common neutral hadron)
+            if p.type == 130  # PDG code for K_L^0 (common neutral hadron)
                 push!(is_neutral_had, 1.0f0)
             else
                 push!(is_neutral_had, 0.0f0)
@@ -1493,7 +1493,7 @@ function get_mtof(jcs::Vector{StructVector{EDM4hep.ReconstructedParticle}},
             if hasfield(typeof(particle), :clusters_begin) && particle.clusters_begin > 0
                 
                 # K_L^0 (PDG code 130)
-                if particle.particleIDs == 130 && particle.clusters_begin < length(nhdata) + length(gammadata)
+                if particle.type == 130 && particle.clusters_begin < length(nhdata) + length(gammadata)
                     # For neutral hadrons
                     cluster_idx = particle.clusters_begin - length(gammadata)
                     
@@ -1531,7 +1531,7 @@ function get_mtof(jcs::Vector{StructVector{EDM4hep.ReconstructedParticle}},
                             end
                         end
                     end
-                elseif particle.particleIDs == 22  # Photon
+                elseif particle.type == 22  # Photon
                     push!(mtof_values, 0.0f0)  # Photons have zero mass
                     mtof_added = true
                 end

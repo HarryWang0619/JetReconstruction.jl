@@ -38,7 +38,7 @@ Build the collection of constituents using cluster indices.
 # Returns
 A vector of JetConstituents, each containing the constituents for a specific cluster.
 """
-function build_constituent_cluster(rps::JetConstituents, indices::Vector{Vector{Int}})
+function build_constituents_cluster(rps::JetConstituents, indices::Vector{Vector{Int}})
     jcs = Vector{JetConstituents}()
     for jet_indices in indices
         jc = rps[jet_indices]

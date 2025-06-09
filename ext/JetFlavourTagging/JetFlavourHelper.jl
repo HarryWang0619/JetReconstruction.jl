@@ -334,8 +334,8 @@ Extract all required features for jet flavor tagging.
 Dictionary containing all extracted features organized by input type
 """
 function extract_features(jets::Vector{EEJet}, jcs::Vector{StructVector{EDM4hep.ReconstructedParticle}}, 
-                        tracks::StructVector{EDM4hep.TrackState}, bz::Float64 = 2.0, 
-                        track_L::Vector{Float32}=Float32[], 
+                        tracks::StructVector{EDM4hep.TrackState}, bz::Float32, 
+                        track_L::AbstractArray{T} where T <: AbstractFloat, 
                         trackdata::StructVector{EDM4hep.Track}=StructVector{EDM4hep.Track}(), 
                         trackerhits::StructVector{EDM4hep.TrackerHit}=StructVector{EDM4hep.TrackerHit}(), 
                         gammadata::StructVector{EDM4hep.Cluster}=StructVector{EDM4hep.Cluster}(), 
